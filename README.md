@@ -1,7 +1,8 @@
-
 # rating
 
 Star rating widget.
+
+[Check out the demo on requirebin!](http://requirebin.com/embed?gist=6264704)
 
 ## Example
 
