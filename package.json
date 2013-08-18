@@ -1,0 +1,30 @@
+{
+  "name": "rating",
+  "description": "Star rating widget.",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/juliangruber/rating.git"
+  },
+  "homepage": "https://github.com/juliangruber/rating",
+  "main": "index.js",
+  "dependencies": {
+    "contains": "~0.1.1"
+  },
+  "devDependencies": {
+    "insert-css": "0.0.0"
+  },
+  "keywords": [
+    "star",
+    "rating",
+    "widget",
+    "browser",
+    "browserify"
+  ],
+  "author": {
+    "name": "Julian Gruber",
+    "email": "mail@juliangruber.com",
+    "url": "http://juliangruber.com"
+  },
+  "license": "MIT"
+}

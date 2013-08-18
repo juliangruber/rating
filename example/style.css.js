@@ -1,0 +1,1 @@
+module.exports = '.star {\n  color: lightgray;\n}\n\n.star.glow {\n  color: brown;\n}';

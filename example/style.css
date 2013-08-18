@@ -1,0 +1,7 @@
+.star {
+  color: lightgray;
+}
+
+.star.glow {
+  color: brown;
+}
