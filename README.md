@@ -1,6 +1,6 @@
 # rating
 
-Star rating widget.
+A customizable star rating widget.
 
 [Check out the demo on requirebin!](http://requirebin.com/embed?gist=6264704)
 
