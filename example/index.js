@@ -12,8 +12,10 @@ star.className = 'star';
 
 var rating = new Rating([1, 2, 3, 4, 5], {
   container: container,
-  star: star
+  star: star,
+  readOnly: false
 });
+
 document.body.appendChild(rating.el);
 window.rating = rating;
 

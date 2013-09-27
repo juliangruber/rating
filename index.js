@@ -9,14 +9,16 @@ function Rating(weights, opts) {
   if (!(this instanceof Rating)) return new Rating(weights, opts);
   Emitter.call(this);
 
-  if (opts && opts.container) {
+  opts = opts || {};
+
+  if (opts.container) {
     this.el = opts.container;
   } else {
     this.el = document.createElement('span');
     this.el.className = 'rating';
   }
 
-  if (opts && opts.star) {
+  if (opts.star) {
     this.tmpl = opts.star;
   } else {
     this.tmpl = document.createElement('span');
@@ -24,6 +26,7 @@ function Rating(weights, opts) {
     this.tmpl.innerHTML = '&#9733;';
   }
 
+  this.readOnly = !!opts.readOnly;
   this.weights = weights;
   this.stars = [];
   this.ratingIdx = null;
@@ -34,11 +37,20 @@ inherits(Rating, Emitter);
 
 Rating.prototype.build = function() {
   var self = this;
+
   self.weights.forEach(function(weight, idx) {
     var star = new Star(self.tmpl.cloneNode(true));
     self.el.appendChild(star.el);
     self.stars.push(star);
+  });
 
+  process.nextTick(function() {
+    self.emit('select', self.weights[self.ratingIdx]);
+  });
+
+  if (self.readOnly) return;
+
+  self.stars.forEach(function(star, idx) {
     star.on('click', function() {
       self.ratingIdx = idx;
       self.emit('rate', self.weights[self.ratingIdx]);
@@ -57,10 +69,6 @@ Rating.prototype.build = function() {
       ? self.ratingIdx + 1
       : 0;
     self.update(idx);
-    self.emit('select', self.weights[self.ratingIdx]);
-  });
-
-  process.nextTick(function() {
     self.emit('select', self.weights[self.ratingIdx]);
   });
 };
