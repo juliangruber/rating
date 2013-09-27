@@ -21,7 +21,7 @@ function Rating(weights, opts) {
   } else {
     this.tmpl = document.createElement('span');
     this.tmpl.className = 'star';
-    this.tmpl.innerHTML = '★';
+    this.tmpl.innerHTML = '&#9733;';
   }
 
   this.weights = weights;
