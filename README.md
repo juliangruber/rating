@@ -68,6 +68,7 @@ Possible options:
 
 * `container (Element)`: Instead of creating a new DOM element for the widget, render everything into `container`.
 * `star (Element)`: Clone the `star` element for every star that is to be shown, instead of using the default star element.
+* `readOnly (Boolean)`: If `true`, the rating can't be modified.
 
 ### Rating#el
 
