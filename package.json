@@ -12,7 +12,7 @@
     "contains": "~0.1.1"
   },
   "devDependencies": {
-    "insert-css": "0.0.0"
+    "insert-css": "2.0.0"
   },
   "keywords": [
     "star",
